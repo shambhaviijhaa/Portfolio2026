@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shambhavi Jha | Portfolio Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=400;500;700&family=VT323&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0b0f19;
+            overflow-x: hidden;
+        }
+
+        .arcade-font {
+            font-family: 'VT323', monospace;
+        }
+
+        .arcade-screen relative::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            z-index: 20;
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .crt-glow {
+            text-shadow: 0 0 6px rgba(236, 72, 153, 0.6), 0 0 12px rgba(236, 72, 153, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- ================= ARCADE INSERT COIN SCREEN ================= -->
+    <div id="arcade-container" class="fixed inset-0 z-[100] bg-[#05070c] flex flex-col items-center justify-center p-4 transition-all duration-700 ease-in-out">
+        <div class="arcade-screen relative bg-[#08020f] border-4 border-indigo-900/60 w-full max-w-2xl aspect-[4/3] rounded-2xl flex flex-col items-center justify-between p-8 md:p-12 shadow-[0_0_50px_rgba(79,70,229,0.15)] overflow-hidden">
+            
+            <div class="w-full flex justify-between text-indigo-400 arcade-font text-xl md:text-2xl tracking-wider">
+                <div class="animate-pulse">🟢 SYSTEM: RUNNING</div>
+                <div>HI-SCORE: 92.8%</div>
+            </div>
+
+            <div class="text-center space-y-6 z-10 my-auto">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 arcade-font crt-glow uppercase">
+                    SHAMBHAVI OS
+                </h1>
+                
+                <div class="py-4">
+                    <button onclick="insertCoin()" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-gradient-to-r from-pink-600 to-indigo-600 rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] cursor-pointer">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"></span>
+                        <span class="relative flex items-center gap-3 arcade-font text-2xl md:text-3xl tracking-widest animate-bounce group-hover:animate-none">
+                            🪙 INSERT COIN
+                        </span>
+                    </button>
+                </div>
+
+                <p class="text-slate-500 font-mono text-xs tracking-widest uppercase">
+                    Initialize Full Verified Engineering Database
+                </p>
+            </div>
+
+            <div class="w-full text-center text-slate-600 font-mono text-[10px] uppercase tracking-widest border-t border-slate-900/80 pt-4">
+                Full-Stack // Distributed Systems // Telemetry & Failovers
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= MAIN PORTFOLIO INTERFACE ================= -->
+    <div id="main-portfolio" class="opacity-0 pointer-events-none transition-opacity duration-1000 w-full flex flex-col justify-between min-h-screen">
+        
+        <!-- HEADER / NAVIGATION (Working anchor navigation links explicitly mapped to sections) -->
+        <header class="border-b border-slate-800/80 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
+            <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+                <a href="#About" class="font-bold text-lg tracking-tight text-white hover:text-indigo-400 transition-colors">
+                    SHAMBHAVI <span class="text-indigo-400">JHA</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+                    <a href="#About" class="hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#Experience" class="hover:text-indigo-400 transition-colors">Experience</a>
+                    <a href="#Projects" class="hover:text-indigo-400 transition-colors">Projects</a>
+                    <a href="#Honors" class="hover:text-indigo-400 transition-colors">Honors</a>
+                    <a href="#Activities" class="hover:text-indigo-400 transition-colors">Activities</a>
+                    <a href="#Contact" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold transition-all shadow-md shadow-indigo-900/30">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="About" class="max-w-5xl mx-auto px-6 pt-16 pb-12 w-full grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-2 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                    🚀 Full Stack Developer @ Airtel Digital
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Building robust, real-time distributed platforms.
+                </h1>
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                    Hi, I'm Shambhavi Jha. I engineer end-to-end telemetry platforms, high-throughput streaming systems, and fault-tolerant failover API architectures. Currently driving user growth engineering at <strong class="text-slate-200">Airtel Digital (Xstream Play)</strong>.
+                </p>
+                
+                <!-- COMPLETE SKILLS DIRECTORY -->
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest block mb-1.5">Languages & Frameworks</span>
+                        <div class="flex flex-wrap gap-1.5 text-xs">
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Java</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">C++</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Python</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">JavaScript / TypeScript</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Spring Boot / Spring Cloud</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Next.js / React / Angular / Node.js</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest block mb-1.5">Infrastructure, Cloud & Architecture</span>
+                        <div class="flex flex-wrap gap-1.5 text-xs">
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Kafka</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">ClickHouse</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">MongoDB / DynamoDB / Redis</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">AWS / GCP / GCS / Airflow</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Docker / Kubernetes / Jenkins / ArgoCD</span>
+                            <span class="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-slate-300">Distributed Systems / Microservices / CI-CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ACADEMIC MATRIX -->
+            <div class="space-y-4">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-5 rounded-xl border border-slate-800/80 shadow-lg">
+                    <div class="flex items-center gap-2.5 text-indigo-400 font-bold text-xs uppercase tracking-wider mb-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Education
+                    </div>
+                    <h4 class="font-bold text-white text-sm">Banasthali Vidyapith</h4>
+                    <p class="text-xs text-slate-400">B.Tech Computer Science & Eng.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-500 mt-1 font-medium">
+                        <span>CGPA: 8.01</span>
+                        <span>2021 – 2025</span>
+                    </div>
+                    <p class="text-[11px] text-indigo-300 bg-indigo-950/30 border border-indigo-900/40 px-2 py-1 rounded mt-2.5">
+                        📜 Side Coursework: Diploma in Internet & Web Applications (Distinction)
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/60">
+                    <h4 class="font-bold text-white text-xs">Mount Carmel School</h4>
+                    <p class="text-xs text-slate-400">CBSE Class 12 (PCM + CS)</p>
+                    <div class="flex justify-between items-center text-[11px] text-slate-500 mt-1">
+                        <span class="text-emerald-400 font-bold">Aggregate: 92.8%</span>
+                        <span>2020 – 2021</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE SECTION ================= -->
+        <section id="Experience" class="bg-slate-950/40 border-y border-slate-900/60 w-full py-16">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="p-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg"><i data-lucide="briefcase" class="w-4 h-4"></i></div>
+                    <h2 class="text-2xl font-bold text-white">Professional Experience</h2>
+                </div>
+                
+                <div class="space-y-8 relative border-l-2 border-slate-800 pl-4 ml-2">
+                    <!-- Airtel Full-Time Core 2 -->
+                    <div class="relative">
+                        <div class="absolute w-3.5 h-3.5 bg-indigo-500 rounded-full -left-[23px] top-1.5 border-4 border-slate-950"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Airtel Digital (Xstream Play – User Growth Platform)</h3>
+                                <p class="text-xs text-indigo-400 font-medium">Full Stack Developer</p>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">Apr. 2026 – Present</span>
+                        </div>
+                        <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+                            <li>Engineered an end-to-end <strong class="text-slate-300">ZION telemetry system</strong> using Spring Boot, Kafka, and ClickHouse to ingest and track real-time notification delivery logs at 1,500+ events/sec.</li>
+                            <li>Built high-throughput data pipelines using Spring Cloud and GCS buckets managed via Apache Airflow DAGs, incorporating dynamic runtime filters to bypass campaign employee exclusion rules.</li>
+                            <li>Cut database query latency by 35% by refactoring multi-field MongoDB regex trees into high-efficiency, backward-compatible lookup patterns.</li>
+                            <li>Developed an internal Campaign Template Simulator using Next.js, TypeScript, and Redux Toolkit, cutting QA release validation timelines by 25%.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Airtel Full-Time Core 1 -->
+                    <div class="relative">
+                        <div class="absolute w-3.5 h-3.5 bg-indigo-500 rounded-full -left-[23px] top-1.5 border-4 border-slate-950"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Airtel Digital (Xstream Play – Wynk Common Framework)</h3>
+                                <p class="text-xs text-indigo-400 font-medium">Backend Engineer</p>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">Jul. 2025 – Mar. 2026</span>
+                        </div>
+                        <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+                            <li>Designed an LLD failover API engine via a Singleton schema to dynamically route traffic between payment gateways (APS ↔ PayU), protecting Rs.12 Lakhs in revenue during peak traffic.</li>
+                            <li>Resolved a production renewal race condition by converting delayed webhook zombie states into fresh user purchases, recovering 4% of transactional drops.</li>
+                            <li>Developed a secure S2S aggregation engine in the Utils service paired with a custom analytic logging pipeline to pull, stream, and monitor real-time payment data for the Chatbot framework.</li>
+                            <li>Engineered a fault-tolerant exception routing architecture for deferred transaction layers, mitigating database race conditions to achieve 0% downstream 5xx gateway faults.</li>
+                            <li>Patched software dependencies and structural vulnerabilities across 11 core microservices via BlackDuck security scans.</li>
+                        </ul>
+                    </div>
+
+                    <!-- EY Intern -->
+                    <div class="relative">
+                        <div class="absolute w-3.5 h-3.5 bg-purple-500 rounded-full -left-[23px] top-1.5 border-4 border-slate-950"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Ernst & Young (EY)</h3>
+                                <p class="text-xs text-purple-400 font-medium">Software Engineering Intern</p>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">May 2024 – Jul. 2024</span>
+                        </div>
+                        <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+                            <li>Built Rasa and Python backend routing for an NLP bot, hitting a 92% intent mapping accuracy.</li>
+                            <li>Developed Spring Boot REST APIs to integrate the conversational backend with an Angular frontend.</li>
+                        </ul>
+                    </div>
+
+                    <!-- NoQs Intern -->
+                    <div class="relative">
+                        <div class="absolute w-3.5 h-3.5 bg-slate-600 rounded-full -left-[23px] top-1.5 border-4 border-slate-950"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                            <div>
+                                <h3 class="font-bold text-white text-base">NoQs Digital</h3>
+                                <p class="text-xs text-slate-400 font-medium">Data Analyst Summer Intern (Remote)</p>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">May 2023 - Jul 2023</span>
+                        </div>
+                        <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+                            <li>HR Dashboard: Worked on creating interactive Dashboards from HR’s perspective on dataset using Power BI.</li>
+                            <li>Task Management Dashboard: Worked on building an interactive dashboard for the Team Manager’s perspective and an Employee’s perspective by analysing the provided dataset.</li>
+                            <li>Fixed Deposit Investment Dashboard: Worked on building an interactive dashboard for an individual to keep a track of personal investments in Fixed Deposits in multiple banks.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Personifwy Intern -->
+                    <div class="relative">
+                        <div class="absolute w-3.5 h-3.5 bg-slate-600 rounded-full -left-[23px] top-1.5 border-4 border-slate-950"></div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                            <div>
+                                <h3 class="font-bold text-white text-base">Personifwy</h3>
+                                <p class="text-xs text-slate-400 font-medium">Project Intern (Remote)</p>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">Apr 2022 - Jun 2022</span>
+                        </div>
+                        <ul class="mt-3 space-y-1.5 text-xs text-slate-400 list-disc list-inside">
+                            <li>News Classifier: Built and tested a model that classifies either the given news is genuine or false by using NLP.</li>
+                            <li>Digit Detector: Developed an ML-based system that recognizes and classifies handwritten digits.</li>
+                            <li>Fashion-MNIST Data Classifier: Developed a classification model that can predict and classify the set of clothes using deep learning CNN.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS SECTION ================= -->
+        <section id="Projects" class="max-w-5xl mx-auto px-6 py-16 w-full">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="p-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-lg"><i data-lucide="code-2" class="w-4 h-4"></i></div>
+                <h2 class="text-2xl font-bold text-white">Corporate Innovation & Technical Projects</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Airtel Tech Tank Showcase -->
+                <div class="p-6 rounded-xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 flex flex-col justify-between md:col-span-2">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-white">ICE (Intelligent Checkout Engine) — Airtel Tech Tank Grand Finale</h4>
+                            <span class="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 font-mono">TOP 5 SHOWCASE // TEAM EVOLIS</span>
+                        </div>
+                        <ul class="text-xs text-slate-400 space-y-1 list-disc list-inside mb-4">
+                            <li>Developed ICE (Intelligent Checkout Engine) optimizing payment routing for 80,000 daily users on Airtel Thanks App.</li>
+                            <li>Trained XGBoost model (90.52% accuracy) triggering 1-tap checkout above 85% confidence, else sorting by probability.</li>
+                            <li>Designed model outputs to scale cross-selling infrastructures, enabling secondary asset discovery via propensity scoring.</li>
+                        </ul>
+                    </div>
+                    <div class="text-[11px] text-indigo-300 font-medium pt-3 border-t border-slate-800 flex flex-wrap gap-x-6 gap-y-1">
+                        <span>🎯 Projected transaction lift: +1.5%</span>
+                        <span>📈 Volume recovery: 5.9K checkouts/day</span>
+                        <span>💰 Revenue trajectory: Est. INR 5.4 Cr. monthly GMV lift</span>
+                    </div>
+                </div>
+
+                <!-- Bob: The Job Bot -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-white text-base">Bob: The Job Bot</h4>
+                            <span class="text-[10px] font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">OPEN SOURCE</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                            Built a multi-threaded Python engine to ingest listing metrics across 30+ endpoints into Amazon DynamoDB, incorporating a Wit.AI parsing framework to increase user search precision by 60%. Developed a Python-based chatbot that uses web-scraping to find suitable job opportunities.
+                        </p>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500 block">Tech Stack: Python, API, DynamoDB, Wit.AI, Web-Scraping</span>
+                </div>
+
+                <!-- CoinCause -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-white text-base">CoinCause</h4>
+                            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">BLOCKCHAIN</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                            Developing a blockchain-based crowdfunding platform to bring transparency and security to the fundraising process.
+                        </p>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500 block">Tech Stack: Blockchain, Solidity, SQL, React, Web 3.0</span>
+                </div>
+
+                <!-- Stress Reliever -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 flex flex-col justify-between md:col-span-2">
+                    <div>
+                        <h4 class="font-bold text-white text-base mb-1">Stress Reliever</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                            Developed an API connected website i.e a one stop solution to relieve stress.
+                        </p>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500 block">Tech Stack: HTML, CSS, JavaScript</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HONORS SECTION ================= -->
+        <section id="Honors" class="bg-slate-950/40 border-t border-slate-900/60 w-full py-16">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="p-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-lg"><i data-lucide="award" class="w-4 h-4"></i></div>
+                    <h2 class="text-2xl font-bold text-white">Mentorship Programs & Honors</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                        <span class="text-xs font-mono text-indigo-400 font-bold block mb-1">GOOGLE & TALENTSPRINT (2022)</span>
+                        <h4 class="font-bold text-white text-base">Women Engineers (WE) Scholar</h4>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                            Selected for a two year training program among top 250 women engineering students from more than 28,000 applicants all over India & awarded 100% fee waiver and a cash scholarship.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/80 flex flex-col justify-center">
+                        <span class="text-xs font-mono text-purple-400 font-bold block mb-1">MINISTRY OF EDUCATION, GOVT OF INDIA (2022)</span>
+                        <h4 class="font-bold text-white text-base">AI for All National Recognition</h4>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                            Awarded with AI Appreciate and AI Aware Badge by Ministry of Education, Government of India.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ACTIVITIES SECTION ================= -->
+        <section id="Activities" class="max-w-5xl mx-auto px-6 py-16 w-full">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="p-1.5 bg-pink-500/10 border border-pink-500/20 text-pink-400 rounded-lg"><i data-lucide="party-popper" class="w-4 h-4"></i></div>
+                <h2 class="text-2xl font-bold text-white">Extra-curriculars & Leadership</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- AlgoByte -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                    <div class="flex items-center gap-2.5 mb-3 text-indigo-400">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                        <h4 class="font-bold text-white text-sm">AlgoByte Core Member</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Technical Core Team member @AlgoByte: Conducted workshops, hackathons, project sessions for tech. from A to Z.
+                    </p>
+                </div>
+
+                <!-- RJ -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                    <div class="flex items-center gap-2.5 mb-3 text-pink-400">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                        <h4 class="font-bold text-white text-sm">Radio Jockey (90.4 FM)</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Radio Jockey @Radio Banasthali 90.4FM: Written and recorded a script for Aaradhna Programme Radio Banasthali 90.4FM.
+                    </p>
+                </div>
+
+                <!-- Saakshar Bharat -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                    <div class="flex items-center gap-2.5 mb-3 text-emerald-400">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        <h4 class="font-bold text-white text-sm">Literacy Coordinator</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Literacy Coordinator @Saakshar Bharat: Educated 25+ poor people to reduce poverty and increase literacy rate.
+                    </p>
+                </div>
+
+                <!-- DSC -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/60">
+                    <div class="flex items-center gap-2.5 mb-3 text-purple-400">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                        <h4 class="font-bold text-white text-sm">DSC Club Member</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Member @DSC Banasthali Vidyapith: Participated and attended various workshops and contests.
+                    </p>
+                </div>
+
+                <!-- Cultural Captain -->
+                <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800/60 md:col-span-2">
+                    <div class="flex items-center gap-2.5 mb-3 text-amber-400">
+                        <i data-lucide="megaphone" class="w-5 h-5"></i>
+                        <h4 class="font-bold text-white text-sm">Student Council Cultural Captain</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Student Council-School Cultural Captain @Mount Carmel School: Worked for the interest of students & organized 80+ events in two years tenure.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <footer id="Contact" class="bg-slate-950 border-t border-slate-900 py-12 w-full mt-auto">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="space-y-1 text-center md:text-left">
+                    <p class="text-white font-bold text-base">Let's connect on Player 2 mode!</p>
+                    <p class="text-xs text-slate-500">Available for distributed architecture pipelines, full-stack optimizations, or system engineering panels.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 text-xs font-mono">
+                    <a href="mailto:shambhavi.work05@gmail.com" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-3.5 py-2 rounded-lg border border-slate-800 hover:border-slate-700 text-slate-300 transition-all group">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400 group-hover:scale-110 transition-transform"></i> shambhavi.work05@gmail.com
+                    </a>
+                    <a href="tel:+917425015962" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-3.5 py-2 rounded-lg border border-slate-800 hover:border-slate-700 text-slate-300 transition-all group">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 text-pink-400 group-hover:scale-110 transition-transform"></i> +91-7425015962
+                    </a>
+                    <div class="flex gap-2">
+                        <a href="#" class="bg-slate-900 hover:bg-slate-800 px-3 py-2 rounded-lg border border-slate-800 text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+                        <a href="#" class="bg-slate-900 hover:bg-slate-800 px-3 py-2 rounded-lg border border-slate-800 text-slate-400 hover:text-white transition-colors">GitHub</a>
+                        <a href="#" class="bg-slate-900 hover:bg-slate-800 px-3 py-2 rounded-lg border border-slate-800 text-slate-400 hover:text-white transition-colors">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ================= SYSTEM SCRIPTS CORE ================= -->
+    <script>
+        // Start Lucide Vector Geometry
+        lucide.createIcons();
+
+        // Screen frame visibility controller switch
+        function insertCoin() {
+            const arcadeContainer = document.getElementById('arcade-container');
+            const mainPortfolio = document.getElementById('main-portfolio');
+
+            // Synthesize retro tone patterns
+            try {
+                const context = new (window.AudioContext || window.webkitAudioContext)();
+                let osc1 = context.createOscillator();
+                let gain1 = context.createGain();
+                osc1.type = 'square';
+                osc1.frequency.setValueAtTime(523.25, context.currentTime); // C5
+                osc1.connect(gain1);
+                gain1.connect(context.destination);
+                gain1.gain.setValueAtTime(0.06, context.currentTime);
+                osc1.start();
+                osc1.stop(context.currentTime + 0.06);
+
+                setTimeout(() => {
+                    let osc2 = context.createOscillator();
+                    let gain2 = context.createGain();
+                    osc2.type = 'square';
+                    osc2.frequency.setValueAtTime(659.25, context.currentTime); // E5
+                    osc2.connect(gain2);
+                    gain2.connect(context.destination);
+                    gain2.gain.setValueAtTime(0.06, context.currentTime);
+                    osc2.start();
+                    osc2.stop(context.currentTime + 0.12);
+                }, 70);
+            } catch (e) {}
+
+            // Fade transition animation sequence
+            arcadeContainer.classList.add('opacity-0', 'scale-95');
+            
+            setTimeout(() => {
+                arcadeContainer.classList.add('hidden');
+                
+                // Expose functional portfolio setup frame block
+                mainPortfolio.classList.remove('pointer-events-none');
+                mainPortfolio.classList.remove('opacity-0');
+                
+                // Clear page positioning anchors instantly to prevent scroll offsets
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }, 650);
+        }
+    </script>
+</body>
+</html>
